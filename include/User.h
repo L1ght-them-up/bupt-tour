@@ -8,26 +8,25 @@
  *                地点列表中寻找附近地点。
 */
 
-#pragma once
 #ifndef __USER_H__
 #define __USER_H__
 
 #include <QtWidgets/QMainWindow>
 #include <vector>
 #include <utility>
+#include <stack>
 
 class User
 {
-
-    Q_OBJECT;
-
 public:
     int getX();
     int getY();
+    int getDes();
     int move();
     std::vector<std::pair<int, int>> getSpot();
 
     User(std::stack<std::pair<int, int>>& path);
+    ~User();
 
 private:
     int coordX;
